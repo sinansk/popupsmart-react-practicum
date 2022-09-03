@@ -1,0 +1,69 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100;
+}
+
+.form {
+  width: 100%;
+  min-height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.form * {
+  box-sizing: border-box;
+  min-height: 3rem;
+  transition: border-radius 1s;
+  -webkit-transition: border-radius 1s;
+  -moz-transition: border-radius 1s;
+  -ms-transition: border-radius 1s;
+  -o-transition: border-radius 1s;
+}
+.form > .input {
+  width: 100%;
+  border-radius: 16px;
+  border-style: none;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  padding: 0 5px;
+  border: solid 1px #ccc;
+}
+.form > .input:focus {
+  outline: none !important;
+  border-color: #56ab2f;
+  box-shadow: 0 0 10px #56ab2f;
+}
+.form > button {
+  width: 15%;
+  margin-left: 3%;
+  border-radius: 16px;
+  border-style: none;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+.form > button:hover {
+  background-color: #dddddd;
+}
+.main.active .form > button {
+  border-radius: 5px 16px 0 5px;
+  -webkit-border-radius: 5px 16px 0 5px;
+  -moz-border-radius: 5px 16px 0 5px;
+  -ms-border-radius: 5px 16px 0 5px;
+  -o-border-radius: 5px 16px 0 5px;
+}
+
+.main.active .form > .input {
+  border-radius: 16px 5px 5px 5px;
+}
