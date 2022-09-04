@@ -1,4 +1,4 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
 }
@@ -9,29 +9,42 @@ body {
   height: 100;
 }
 
-.main::-webkit-scrollbar {
+.list ul {
+  list-style: none;
+  margin-top: 5px;
+}
+
+.list ul > li {
+  display: flex;
+  justify-content: c;
+  align-items: center;
+  height: 3rem;
+  background-color: white;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  position: relative;
+}
+.list label {
+  flex: 1;
+  cursor: pointer;
+  margin-left: 0px;
+  vertical-align: middle;
+}
+.list input {
   display: none;
 }
 
-.main {
-  width: 35rem;
-  height: var(--main-height);
-  max-height: 80vh;
-  overflow-y: scroll;
-  background: rgba(255, 255, 255, 0.31);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.7px);
-  -webkit-backdrop-filter: blur(6.7px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 4px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  position: relative;
+.list input + label:before {
+  position: absolute;
+  left: 2px;
+  content: "⬜️";
+  margin-right: 10px;
 }
 
-button {
-  cursor: pointer;
-}
+.list input:checked + label:before {
+  content: "👌";
+} */

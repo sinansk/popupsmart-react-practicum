@@ -32,15 +32,24 @@ const TodoInput = () => {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <form
+      className="flex justify-between gap-2 items-center h-12 transition-all-500"
+      onSubmit={onSubmit}
+    >
       <input
-        className="input"
+        className={`w-full rounded-xl h-full focus:outline-none focus:border-[0.5px] focus:border-green-500`}
         name="content"
         placeholder="What will you do ?"
         value={form}
         onChange={onChangeInput}
       ></input>
-      <button>Add</button>
+      <button
+        className={`${
+          todos?.length > 0 ? `rounded-none` : `rounded-xl`
+        } btn w-1/6  h-full bg-gray-50 hover:bg-gray-200 `}
+      >
+        Add
+      </button>
     </form>
   );
 };

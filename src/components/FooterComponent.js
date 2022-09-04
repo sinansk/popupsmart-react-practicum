@@ -1,31 +1,59 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FooterComponent.css";
 import { useState } from "react";
-import { getAllByAltText } from "@testing-library/react";
-import { useDispatch } from "react-redux";
-import { deleteTodo } from "../redux/todosSlice";
+
+import { useDispatch, useSelector } from "react-redux";
+import { deleteTodo, fetchTodos, filterTodos } from "../redux/todosSlice";
 
 const FooterComponent = ({}) => {
   const dispatch = useDispatch();
-  function clearAll() {
-    dispatch(deleteTodo());
+
+  const filteredTodos = useSelector((state) => state.todos.filteredTodos);
+  const todos = useSelector((state) => state.todos.data);
+
+  function filterTodo(e) {
+    const buttonName = e.target.name;
+    dispatch(fetchTodos()).then(() => dispatch(filterTodos(buttonName)));
   }
 
   return (
-    <div className="footer">
-      <p>Items Left </p>
-      <ul>
+    <div
+      className={`${
+        !todos?.length > 0 ? `hidden` : `flex`
+      } justify-center items-center sticky bottom-0 right-0 left-0 h-12 bg-gray-50 rounded-b-xl w-full`}
+    >
+      <p className="mr-auto w-14">Items {filteredTodos?.length}</p>
+      <ul className="mx-auto pr-14 flex gap-5 list-none">
         <li>
-          <button className="All">All</button>
+          <button
+            name="all"
+            className="border-[0.5px]  border-emerald-500 rounded-md px-2 py-1 hover:bg-gray-100"
+            onClick={(e) => filterTodo(e)}
+          >
+            All
+          </button>
         </li>
         <li>
-          <button className="Active">Active</button>
+          <button
+            className="border-[0.5px] border-emerald-500 rounded-md px-2 py-1 hover:bg-gray-100"
+            name="active"
+            data-iscompleted={false}
+            onClick={(e) => filterTodo(e)}
+          >
+            Active
+          </button>
         </li>
         <li>
-          <button className="Complated">Complated</button>
+          <button
+            className="border-[0.5px] border-emerald-500 rounded-md px-2 py-1 hover:bg-gray-100"
+            name="completed"
+            data-iscompleted={true}
+            onClick={(e) => filterTodo(e)}
+          >
+            Complated
+          </button>
         </li>
       </ul>
-      <button onClick={clearAll}>Clear All</button>
     </div>
   );
 };

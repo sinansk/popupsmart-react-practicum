@@ -6,18 +6,17 @@ import "./ListComponent.css";
 import Todo from "./Todo";
 
 const ListComponent = () => {
-  const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todos.data);
-  useEffect(() => {
-    dispatch(fetchTodos());
-  }, []);
+  const filteredTodos = useSelector((state) => state.todos.filteredTodos);
+
   return (
     <div className="list">
-      <ul>
-        {todos?.map((todo) => (
-          <Todo key={todo.id} todo={todo} />
-        ))}
-      </ul>
+      {filteredTodos && (
+        <ul>
+          {filteredTodos?.map((todo) => (
+            <Todo key={todo.id} todo={todo} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

@@ -24,7 +24,6 @@ body {
   backdrop-filter: blur(6.7px);
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 4px;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
