@@ -15,7 +15,6 @@ export const fetchTodos = createAsyncThunk("fetchTodos", async () => {
   return response.data;
 });
 export const createTodo = createAsyncThunk("createTodo", async (form) => {
-  console.log("REDUX", form);
   const response = await publicRequest.post("/", {
     content: form,
   });
@@ -30,15 +29,17 @@ export const deleteTodo = createAsyncThunk("deleteTodo", async (id) => {
   console.log(id);
 
   const response = await publicRequest.delete("/" + id);
-  console.log(response.data, "delete");
+
   return response.data;
 });
 const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
+    setUserName: (state, action) => {
+      state.userName = action.payload;
+    },
     filterTodos: (state, action) => {
-      console.log(action.payload, "filterTodos");
       if (action.payload === "active") {
         state.filteredTodos = state.activeTodos;
       } else if (action.payload === "completed") {
@@ -47,7 +48,9 @@ const todosSlice = createSlice({
         state.filteredTodos = state.data;
       }
     },
+    reset: (state) => {},
   },
+
   extraReducers: (builder) => {
     builder.addCase(fetchTodos.pending, (state) => {
       state.loading = true;
@@ -99,5 +102,5 @@ const todosSlice = createSlice({
     });
   },
 });
-export const { filterTodos } = todosSlice.actions;
+export const { filterTodos, setUserName, reset } = todosSlice.actions;
 export default todosSlice.reducer;

@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchTodos } from "../redux/todosSlice";
-import "./ListComponent.css";
-
+import { useSelector } from "react-redux";
 import Todo from "./Todo";
 
 const ListComponent = () => {
   const filteredTodos = useSelector((state) => state.todos.filteredTodos);
 
   return (
-    <div className="list">
+    <div className="">
       {filteredTodos && (
         <ul>
           {filteredTodos?.map((todo) => (

@@ -1,20 +1,15 @@
-import React from "react";
-import "./TodoPage.css";
-import FooterComponent from "../components/FooterComponent";
+import BottomComponent from "../components/BottomComponent";
 import TodoInput from "../components/TodoInput";
 import ListComponent from "../components/ListComponent";
-import { useSelector } from "react-redux";
 
 const TodoPage = () => {
-  const todos = useSelector((state) => state.todos.data);
-
   return (
     <div
-      className={`w-[35rem] rounded-xl bg-gray-400 border border-gray-100  bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-25 flex flex-col justify-start relative max-h-[80vh]`}
+      className={`no-scrollbar overflow-y-scroll w-86 sm:w-[35rem] border-[1px] h-fit rounded-2xl backdrop-blur-md flex flex-col relative font-semibold justify-start max-h-[80vh] bg-clip-padding backdrop-filter  bg-opacity-50 dark:text-gray-50 border-gray-100 dark:border-slate-500`}
     >
       <TodoInput />
       <ListComponent />
-      <FooterComponent />
+      <BottomComponent />
     </div>
   );
 };

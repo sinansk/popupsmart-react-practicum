@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import TodoInput from "./TodoInput";
-import "./Todo.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+
+import { useDispatch } from "react-redux";
 import { deleteTodo, updateTodo, fetchTodos } from "../redux/todosSlice";
 
 function Todo({ todo }) {
@@ -29,11 +28,11 @@ function Todo({ todo }) {
 
   return (
     <li
-      className={`flex w-full cursor-pointer border-b-[0.5px] border-slate-300 items-center py-1`}
+      className={`flex w-full cursor-pointer border-b-[0.5px] dark:text-gray-50 border-gray-100 dark:border-slate-500 items-center py-1`}
     >
       <input
         type="checkbox"
-        className="flex cursor-pointer ml-1 h-5 w-5 accent-emerald-500/25"
+        className="flex cursor-pointer ml-1 h-5 w-5 accent-yellow-300 dark:accent-emerald-500/25"
         checked={todo2.isCompleted}
         id={todo.id}
         onChange={handleToggle}
@@ -48,7 +47,7 @@ function Todo({ todo }) {
       </label>
 
       <button
-        className="removeTodo"
+        className="p-1.5 bg-transparent hover:bg-opacity-25 hover:bg-white rounded-3xl dark:text-gray-50"
         name={todo.id}
         onClick={(e) => handleDelete(e)}
       >
