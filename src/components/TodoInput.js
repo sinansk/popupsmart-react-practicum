@@ -29,7 +29,7 @@ const TodoInput = () => {
       <input
         className={`${
           filteredTodos?.length > 0 && `rounded-b-none rounded-r-xl`
-        } w-full rounded-xl h-full pl-2 dark:bg-slate-100  focus:outline-none focus:border-[0.5px] focus:border-green-500`}
+        } w-full rounded-xl h-full pl-2 dark:bg-slate-100 dark:text-slte-500  focus:outline-none focus:border-[0.5px] focus:border-green-500`}
         name="content"
         placeholder={`Hello ${userName}, what will you do ?`}
         value={form}
