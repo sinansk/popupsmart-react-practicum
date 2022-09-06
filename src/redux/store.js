@@ -20,18 +20,8 @@ const persistConfig = {
   version: 1,
   storage,
 };
-const combinedReducer = combineReducers({
-  todos: todosSlice,
-  theme: themeSlice,
-});
-const rootReducer = (state, action) => {
-  if (action.type === "todos/reset") {
-    state = undefined;
-  }
-  return combinedReducer(state, action);
-};
 
-// const rootReducer = combineReducers({ todos: todosSlice, theme: themeSlice });
+const rootReducer = combineReducers({ todos: todosSlice, theme: themeSlice });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

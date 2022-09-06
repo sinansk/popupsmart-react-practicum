@@ -27,7 +27,7 @@ const NameInput = () => {
         onChange={onChangeInput}
       ></input>
       <button
-        className={`${`rounded-xl`} rounded-xl  btn w-1/6 h-full  dark:text-slate-500 bg-gray-50 hover:bg-gray-200 `}
+        className={`${`rounded-xl`} rounded-xl btn w-16 sm:w-1/6 h-full  dark:text-slate-500 bg-gray-50 hover:bg-gray-200 `}
       >
         Add
       </button>

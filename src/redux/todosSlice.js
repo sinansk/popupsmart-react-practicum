@@ -48,7 +48,9 @@ const todosSlice = createSlice({
         state.filteredTodos = state.data;
       }
     },
-    reset: (state) => {},
+    reset: (state) => {
+      state.userName = "";
+    },
   },
 
   extraReducers: (builder) => {

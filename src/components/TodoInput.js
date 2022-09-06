@@ -38,7 +38,7 @@ const TodoInput = () => {
       <button
         className={`${
           filteredTodos?.length > 0 && `rounded-b-none rounded-l-xl`
-        } rounded-xl btn w-1/6  h-full  dark:text-slate-500 bg-gray-50 hover:bg-gray-200 `}
+        } rounded-xl btn w-16 sm:w-1/6 h-full  dark:text-slate-500 bg-gray-50 hover:bg-gray-200 `}
       >
         Add
       </button>

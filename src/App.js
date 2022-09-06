@@ -22,9 +22,9 @@ function App() {
     <div
       className={`${
         theme === "dark" ? "dark bg-slate-700" : "bg-sky-400"
-      }    w-screen relative h-screen flex justify-center items-center `}
+      }    w-screen relative h-screen flex flex-col justify-center items-center `}
     >
-      <div className="absolute top-20 left-20 flex items-center justify-between">
+      <div className="absolute top-5 flex items-center justify-between">
         <ThemeButton />
         {userName !== "" && <LogoutButton />}
       </div>
