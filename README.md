@@ -23,3 +23,4 @@ It is a crud todo app with [Mock Api](https://mockapi.io/).
 ## You can see live on [Netlify](https://react-crud-todo-list.netlify.app/).
 
 [![Popupsmart Crud Todo List](https://github.com/sinansk/popupsmart-react-practicum/blob/main/public/react-crud-todo-list.PNG)](https://react-crud-todo-list.netlify.app/)
+[![Popupsmart Crud Todo List](https://github.com/sinansk/popupsmart-react-practicum/blob/main/public/react-crud-todo-list-dark.PNG)](https://react-crud-todo-list.netlify.app/)
